@@ -3,7 +3,7 @@ import React,{Component} from 'react';
 class ProjectList extends Component{
 
     render(){
-        console.log(this.props);
+        
        const {title, category } = this.props.project;     
         return (
             <ul>
