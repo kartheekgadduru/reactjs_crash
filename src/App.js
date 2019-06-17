@@ -10,28 +10,12 @@ class App extends React.Component {
         projects:[]
     }
   }
-componentWillMount(){
-  this.setState({projects:[
-    {
-      title:'Business Website',
-      category:'Web design',
-    },
-    {
-      title:'Social website',
-      category:'Mobile Development',
-    },
-    {
-      title:'Games Website',
-      category:'Desktop Development',
-    }
-  ]})
-}
+
   
 render(){
     return (
     <div className="App">
       <HeadingPage projects ={this.state.projects}  />
-
     </div>
   );
 }

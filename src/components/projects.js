@@ -3,14 +3,12 @@ import React,{Component} from 'react';
 class ProjectList extends Component{
 
     render(){
-        
+      console.log(this.props.project)  ;
        const {title, category } = this.props.project;     
         return (
-            <ul>
-                <li>{title}</li>
-                <li>{category}</li>
-                
-            </ul>
+            <li className="projects">
+               <strong>{title}</strong>:{category}               
+            </li>
         );        
         
     }
