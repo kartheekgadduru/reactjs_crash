@@ -1,11 +1,16 @@
 import React, { Component } from "react";
 import ProjectList from "./projects";
 import AddProject from "./addproject";
+import HandleEvent from "./eventhandleing";
 
 class HeadingPage extends Component {
   constructor() {
     super();
-    this.handleAddProject = this.handleAddProject.bind(this);
+    this.state = {
+      amount: null
+    };
+    
+   
   }
 
   componentWillMount() {
@@ -26,15 +31,22 @@ class HeadingPage extends Component {
       ]
     });
   }
-
+  handleIncrement = () => {
+    this.setState({
+      amount: this.state.amount + 1
+    });
+  };
+  handleDecrement = () => {
+    this.setState({
+      amount: this.state.amount - 1
+    });
+  };
   handleAddProject = project => {
-      let addProjectList = this.state.projects;
-      addProjectList.push(project);
-      this.setState({project:addProjectList});
-    
+    let addProjectList = this.state.projects;
+    addProjectList.push(project);
+    this.setState({ project: addProjectList });
   };
   render() {
-    
     let projectList;
 
     projectList = this.state.projects.map(project => {
@@ -48,6 +60,11 @@ class HeadingPage extends Component {
           project={this.props.projects}
         />
         {projectList}
+        <HandleEvent
+          increment={this.handleIncrement}
+          decrement={this.handleDecrement}
+          amount={this.state.amount}
+        />
       </div>
     );
   }

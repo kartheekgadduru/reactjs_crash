@@ -12,11 +12,7 @@ class AddProject extends Component {
     catogories: ["Web Design", "Web Development", "Game Development"]
   };
   handleSubmit(e) {
-    console.log(
-      'button submited',
-      this.refs.title.value,
-      this.refs.category.value
-    );
+   
     if (this.refs.title) {
       this.setState(
         {
